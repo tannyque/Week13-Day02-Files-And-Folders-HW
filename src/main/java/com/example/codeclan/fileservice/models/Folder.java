@@ -10,12 +10,13 @@ public class Folder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "title")
     private String title;
 
-    @OneToMany(mappedBy = "file", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
     private List<File> files;
 
     @ManyToOne
