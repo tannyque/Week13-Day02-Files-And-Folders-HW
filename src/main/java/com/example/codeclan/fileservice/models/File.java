@@ -8,6 +8,7 @@ public class File {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
@@ -17,13 +18,13 @@ public class File {
     private String extension;
 
     @Column(name = "size")
-    private int size;
+    private Double size;
 
     @ManyToOne
-    @JoinColumn(name="folder_id", nullable=false)
+    @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
 
-    public File(String name, String extension, int size, Folder folder) {
+    public File(String name, String extension, Double size, Folder folder) {
         this.name = name;
         this.extension = extension;
         this.size = size;
@@ -57,11 +58,11 @@ public class File {
         this.extension = extension;
     }
 
-    public int getSize() {
+    public Double getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Double size) {
         this.size = size;
     }
 
