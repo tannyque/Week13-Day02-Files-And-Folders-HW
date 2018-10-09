@@ -1,4 +1,9 @@
 package com.example.codeclan.fileservice.repositories;
 
-public class FolderRepository {
+import com.example.codeclan.fileservice.models.Folder;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class FolderRepository extends JpaRepository<Folder, Long> {
 }
